@@ -1,0 +1,15 @@
+# Нууц мэдээлэл агуулсан файлуудыг GitHub-д оруулахгүй
+.env
+*.env
+
+# Maven build
+target/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
