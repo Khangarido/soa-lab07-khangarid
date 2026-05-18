@@ -1,6 +1,5 @@
 package com.soa.filemanager.service;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.*;
@@ -11,8 +10,7 @@ import org.slf4j.LoggerFactory;
 public class SoapTokenValidator {
     private static final Logger log = LoggerFactory.getLogger(SoapTokenValidator.class);
 
-    @Value("${soap.service.url}")
-    private String soapServiceUrl;
+    private String soapServiceUrl = "https://soa-soap-service-d2ysa.ondigitalocean.app/ws";
 
     private final RestTemplate restTemplate = new RestTemplate();
 
@@ -39,4 +37,4 @@ public class SoapTokenValidator {
             "<soapenv:Body><auth:validateTokenRequest><auth:token>%s</auth:token></auth:validateTokenRequest></soapenv:Body>" +
             "</soapenv:Envelope>", token);
     }
-}
+        }
